@@ -1,0 +1,202 @@
+* {
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el relleno predeterminado */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
+  font-family: "Roboto", sans-serif; /* Establece el tipo de fuente */
+}
+
+body {
+  background: #000;
+}
+
+body::before {
+  /* Establece una capa de fondo */
+  content: ""; /* Crea un contenido vacío para la capa de fondo */
+  position: absolute; /* Posiciona de forma absoluta el cuerpo */
+  left: 0; /* Alinea la capa a la izquierda */
+  top: 0; /* Alinea la capa a la parte superior */
+  opacity: 0.7; /* Establece la opacidad de la capa */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  background: url(img/fondo3.jpeg) no-repeat center center fixed; /* Imagen de fondo centrada y fija */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+}
+
+.logo {
+  position: absolute; /* Posiciona el logo de forma absoluta */
+  top: 10px; /* Ajusta la posición vertical del logo */
+  left: 80px; /* Ajusta la posición horizontal del logo */
+  width: 120px; /* Ancho del logo */
+}
+
+.form-wrapper {
+  /* Estilos del contenedor del formulario */
+  position: absolute; /* Posiciona de forma absoluta */
+  left: 50%; /* Alinea el centro horizontalmente */
+  top: 50%; /* Alinea el centro verticalmente */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centra el contenedor en ambas direcciones */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 70px; /* Añade relleno interno */
+  width: 450px; /* Ancho fijo del contenedor */
+  background: rgb(0, 0, 0, 0.75); /* Fondo negro semitransparente */
+}
+
+.form-wrapper h2 {
+  /*estilos del encabezado del contenedor formularios*/
+  color: #fff; /*color de fuente*/
+  font-size: 2rem; /*tamaño de la fuente*/
+  margin-bottom: 25px; /*espacio inferior del encavezado*/
+}
+
+.form-control {
+  /*estilos de los controles de los formualarios*/
+  height: 50px; /*altura fija para los campos del formulario*/
+  position: relative; /*posiciona de forma relativa de los elementos hijos o internos*/
+  margin-bottom: 16px; /*margen superior entre controles*/
+}
+
+.form-control input {
+  height: 100%; /* Altura completa */
+  width: 100%; /* Ancho completo */
+  background: #333; /* Fondo gris oscuro */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  color: #fff; /* Texto blanco en el campo de entrada */
+  font-size: 1rem; /* Tamaño de fuente */
+  padding: 0 20px; /* Relleno lateral en el campo */
+  opacity: 0.7; /* Opacidad de campo */
+}
+
+.form-control input:focus {
+  background: #444; /*fondo ligeramente mas claro cuando enfoca*/
+}
+
+.form-control label {
+  position: absolute; /*posiciona de forma absoluta dentro del campo*/
+  left: 20px; /*alinea la etiqueta a la izquierda*/
+  top: 50%; /*alinea de forma vertical la etiquteta*/
+  transform: translateY(-50%); /*ajusta la posicion vertial*/
+  color: #8c8c8c;
+  transition: all 0.1s ease; /*transicion suave para cambios*/
+}
+
+.form-control input:focus ~ label,
+.form-control input:valid ~ label {
+  font-size: 0.75rem; /* Tamaño de fuente reducido */
+  transform: translateY(-130%); /* Mueve la etiqueta hacia arriba */
+}
+
+form button {
+  /* Estilos del botón */
+  width: 100%; /* Ancho completo para el botón */
+  padding: 16px 0; /* Relleno vertical del botón */
+  font-size: 1rem; /* Tamaño de fuente */
+  background: #e50914; /* Fondo rojo para el botón */
+  color: #fff; /* Color de texto */
+  border-radius: 4px; /* Bordes redondeados */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Cambia el cursor o puntero */
+  transition: 0.1s ease; /* Transición suave para cambios */
+  margin: 25px 0 10px; /* Márgenes superior e inferior */
+}
+
+form button:hover {
+  background: #c40812;
+}
+
+.form-wrapper a {
+  /* Estilos del enlace al pasar el mouse */
+  color: #fff; /* Color del enlace */
+  /* text-decoration: none; */ /* Sin subrayado (comentado) */
+}
+
+.form-help {
+  display: flex; /* Disposición en flexbox */
+  flex-direction: column; /* Elementos uno sobre otro */
+  align-items: flex-start; /* Alinear a la izquierda */
+}
+
+.login-container {
+  width: 100%; /* Ancho completo */
+  margin-bottom: 10px; /* Espacio inferior del contenedor */
+}
+
+.login-button {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fondo gris con opacidad para el botón */
+  color: white; /* Color del texto */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco con opacidad */
+  padding: 10px; /* Relleno interno del botón */
+  font-size: 16px; /* Tamaño de texto o fuente */
+  cursor: pointer; /* Cambia el puntero al pasar */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el fondo y el borde */
+}
+
+.login-button:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Fondo más claro al pasar el mouse */
+  border-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ); /* Borde más claro al pasar el ratón */
+}
+
+.remember-me {
+  display: flex; /* Disposición en flex */
+  align-items: center; /* Alinear verticalmente */
+  margin-top: 10px; /* Espacio superior */
+}
+
+.remember-me input {
+  margin-right: 5px; /* Margen a la derecha del checkbox */
+}
+
+.form-wrapper small {
+  display: block; /* Muestra como bloque (ocupa todo el ancho) */
+  margin-top: 15px; /* Margen superior */
+  color: #b3b3b3; /*color claro*/
+}
+
+.form-wrapper small a {
+  color: #0071eb; /*color azul para los enlaces*/
+}
+
+.remember-me label {
+  color: #fff; /*cambia a blanco para la etiqueta recuerdame*/
+}
+
+.form-wrapper p {
+  color: #b3b3b3; /*cambia a gris claro para el texto*/
+}
+
+.form-help p {
+  text-align: center; /*centrado de texto*/
+  width: 100%; /*ancho completo*/
+  color: #b3b3b3; /*color gris*/
+}
+
+/*FORMA RESPONSIVA*/
+@media (max-width: 740px) {
+  /*maximo de ancho*/
+  body::before {
+    display: none; /*oculta el fondo de pantallas pequeñas*/
+  }
+  .form-wrapper {
+    width: 90%; /*ancho del formulario en  pantallas pequeñas*/
+    padding: 20px;
+  }
+}
